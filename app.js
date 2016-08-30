@@ -16,7 +16,9 @@ var mongoose = require('mongoose');
 require('./models/Posts');
 require('./models/Comments');
 
-mongoose.connect('mongodb://localhost/3000');
+var URI = process.env.MONGODB_URI || 'mongodb://localhost/photo';
+
+mongoose.connect(URI);
 
 
 // view engine setup
